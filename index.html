@@ -59,7 +59,7 @@
       <div id="container">
         <div id="text"><h1>주전자에
                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;홍차를 넣고-</h1></div>
-    <video id= "video1" style="width: 70%; height: auto;};" autoplay loop muted preload="auto"  >
+    <video id= "video1" style="width: 70%; height: auto;};" loop muted preload="auto"  >
         <source src="icedtea1.mp4" type="video/mp4">
     </video>
     <div class="content">
@@ -71,7 +71,7 @@
       <div id="container">
         <div id="text3"><h1>따뜻한 물을 
                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부어서</h1></div>
-    <video id= "video2" style="width: 75%; height: auto;;" autoplay loop muted preload="auto" >
+    <video id= "video2" style="width: 75%; height: auto;;" loop muted preload="auto" >
         <source src="icedtea_2.mp4" type="video/mp4">
     </video>
 
@@ -83,7 +83,7 @@
   <section id="recipe3" class="scrollTo">
       <div id="container">
         <div id="text"><h1> 잘 -  우려둡니다.</h1></div>
-    <video  id= "video3" style="width: 70%; height: auto;" autoplay loop muted preload="auto" >
+    <video  id= "video3" style="width: 70%; height: auto;" loop muted preload="auto" >
         <source src="icedtea_3.mp4" type="video/mp4">
     </video>
     <div class="content">
@@ -95,7 +95,7 @@
       <div id="container">
         <div id="text3"><h1>컵에 얼음을
                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;가득- 넣고</h1></div>
-    <video  id= "video4" style="width: 70%; height: auto;" autoplay loop muted preload="auto" >
+    <video  id= "video4" style="width: 70%; height: auto;" loop muted preload="auto" >
         <source src="icedtea_4.mp4" type="video/mp4">
     </video>
     <div class="content">
@@ -106,7 +106,7 @@
     <section id="recipe5" class="scrollTo">
       <div id="container">
 
-    <video  id= "video5" style="width: 70%; height: auto;" autoplay loop muted preload="auto" >
+    <video  id= "video5" style="width: 70%; height: auto;" loop muted preload="auto" >
         <source src="icedtea_5.mp4" type="video/mp4">
     </video>
     <div class="content">
@@ -118,7 +118,7 @@
     <section id="recipe6" class="scrollTo">
       <div id="container">
         <div id="text3"><h1>복숭아 시럽을 붓고-</h1></div>
-    <video id= "video6" style="width: 70%; height: auto;" autoplay loop muted preload="auto" >
+    <video id= "video6" style="width: 70%; height: auto;" loop muted preload="auto" >
         <source src="icedtea_6.mp4" type="video/mp4">
     </video>
     <div class="content">
@@ -130,7 +130,7 @@
       <div id="container">
         <div id="text"><h1>식혀둔 홍차도
                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부어주면-</h1></div>
-    <video id= "video7" style="width: 70%; height: auto;" autoplay loop muted preload="auto" >
+    <video id= "video7" style="width: 70%; height: auto;" loop muted preload="auto" >
         <source src="icedtea_7.mp4" type="video/mp4">
     </video>
     <div class="content">        
@@ -140,7 +140,7 @@
   <section id="recipe8" class="scrollTo">
       <div id="container">
 
-    <video id= "video8" style="width: 100%; height: auto;" autoplay loop muted preload="auto" >
+    <video id= "video8" style="width: 100%; height: auto;" loop muted preload="auto" >
         <source src="icedtea_7-2.mp4" type="video/mp4">
     </video>
            <div id="text3"><object type="image/svg+xml" data="img/end.svg" style="width: 90%; left: 30%;"></object></div>
@@ -155,7 +155,7 @@
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보고 싶다면-</h1></div>
             <div> <input class = "button1" type="button" value="Click" onClick="location.href='http://village30.cafe24.com/doc4.html'";> </div>
            <div>
-            <video id= "video9" style="width: 70%; height: auto;" autoplay loop muted preload="auto" >
+            <video id= "video9" style="width: 70%; height: auto;" loop muted preload="auto" >
             <source src="icedtea_8.mp4" type="video/mp4">
             </video>
            </div>
@@ -338,5 +338,20 @@ $(document).ready(function(){
 });
     </script>
 
+<script> //마우스 오버시 동영상 재생
+    $(document).ready(function(){
+        //마우스 오버시
+        $("section").on("mouseenter",function(){
+            var vid = $(this).find("video").get(0);//변수 vid에 video 파일 참조
+            vid.currentTime=0;//동영상의 재생 위치를 처음 (0))으로 설정
+            vid.play();//동영상 재생
+        });
+        //마우스 아웃 시
+        $("section").on("mouseleave",function(){
+            var vid = $(this).find("video").get(0);//변수 vid에 video 파일 참조
+            vid.pause();//동영상 정지
+        });
+    });
+</script>
 
 </body>
